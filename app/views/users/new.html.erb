@@ -1,0 +1,41 @@
+<div class="panel">
+  <div class="panel-heading">
+    <h2>Sign Up</h2>
+  </div>
+  <div class="panel-body">
+    <%= form_for(:user,url:'signup') do |f| %>
+        <% if @user.errors.any? %>
+            <div class="alert alert-danger">
+              <button class="glyphicon glyphicon-alert" role="button" data-dismiss="alert" aria-expanded="false">
+                &times;
+              </button>
+              <h3 class="h3">
+                <%=pluralize(@user.errors.count,"errors") %>
+                &nbsp; has prevented your registration.
+              </h3>
+              <ul>
+                <%=@user.errors.messages do |message| %>
+                    <li><%=message %></li>
+                <% end %>
+              </ul>
+            </div>
+        <% end %>
+        <div class="form-group col-md-5">
+          <%= f.label :email %>
+          <%= f.text_field :email ,{'class'=>'form-control'}%>
+        </div>
+        <div class="form-group col-md-5">
+          <%= f.label :password %>
+          <%= f.text_field :password ,{'class'=>'form-control'}%>
+        </div>
+        <div class="form-group col-md-5">
+          <%= f.label :confirm_password %>
+          <%= f.text_field :confirm_password ,{'class'=>'form-control'}%>
+        </div>
+        <span class="dl-horizontal"></span>
+        <div class="form-group">
+          <%= f.submit :sign_up ,{'class'=>'btn btn-lg btn-default pull-right'} %>
+        </div>
+    <% end %>
+  </div>
+</div>

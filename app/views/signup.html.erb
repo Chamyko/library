@@ -1,0 +1,20 @@
+<div class="modal-dialog">
+  <div class="modal-header bg-warning">Sign Up Form</div>
+  <div class="modal-body">
+    <div class="form-group">
+      <%= f.label :'Email' %>
+      <%= f.text_field :email, {'class'=>'form-control'} %>
+    </div>
+    <div class="form-group">
+      <%= f.label :'Password' %>
+      <%= f.text_field :password, {'class'=>'form-control'} %>
+    </div>
+    <div class="form-group">
+      <%= f.label :'Confirm Password' %>
+      <%= f.text_field :password, {'class'=>'form-control'} %>
+    </div>
+  </div>
+  <div class="modal-footer">
+    <%= f.submit :'Submit',{'class'=>'btn btn-lg btn-success'} %>
+  </div>
+</div>

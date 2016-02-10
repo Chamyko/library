@@ -1,3 +1,4 @@
+<div class="container-1">
 <div class="modal-dialog">
   <div class="modal-header bg-warning">Add Books</div>
   <div class="modal-body">
@@ -32,6 +33,37 @@
     <div class="modal-footer">
       <%= f.cancel :'Prev',{'class'=>'btn btn-lg btn-warning'} %>
       <%= f.submit :'Next',{'class'=>'btn btn-lg btn-success'} %>
+    </div>
+  </div>
+</div>
+</div>
+<div class="container-2" aria-disabled="true">
+  <div class="modal-dialog">
+    <div class="modal-header bg-warning">Search Books</div>
+    <div class="modal-body">
+      <div class="form-group">
+        <%= f.label :'ISBN' %>
+        <%= f.text_field :isbn, {'class'=>'form-control'} %>
+      </div>
+      <div class="form-group">
+        <%= f.label :'Title' %>
+        <%= f.text_field :title, {'class'=>'form-control'} %>
+      </div>
+      <div class="form-group">
+        <%= f.label :'Author' %>
+        <%= f.text_field :author, {'class'=>'form-control'} %>
+      </div>
+      <div class="form-group">
+        <%= f.label :'Category' %>
+        <%= f.select(p1='True Story',p2='Tragic Story',p3='Fiction Story',p4='History',p5='School Subjects'){:category}  %>
+      </div>
+      <div class="form-group">
+        <%= f.label :'Publisher' %>
+        <%= f.text_field :publisher, {'class'=>'form-control'} %>
+      </div>
+      <div class="modal-footer">
+        <%= f.submit :'Search',{'class'=>'btn btn-lg btn-info'} %>
+      </div>
     </div>
   </div>
 </div>

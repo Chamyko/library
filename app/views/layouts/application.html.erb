@@ -35,11 +35,18 @@
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Books<span class="caret"></span></a>
           <ul class="dropdown-menu">
-            <li><a href="#">Action</a></li>
-            <li><a href="#">Another action</a></li>
-            <li><a href="#">Something else here</a></li>
-            <li role="separator" class="divider"></li>
-            <li><a href="#">One more separated link</a></li>
+            <% if logged_in? %>
+                <li><a href="#">New Added Book</a></li>
+                <li role="separator" class="divider"></li>
+                <li><a href="#">Old Books</a></li>
+            <% end %>
+            <% if is_admin? %>
+                <li role="separator" class="divider"></li>
+                <li class="bg-warning"><%= link_to 'Add Category', new_category_path, remote: true,class: "model books"%></li>
+                <li role="separator" class="divider"></li>
+                <li class="bg-warning"><%= link_to 'Add Books', new_book_path, remote: true,class: "model books"%></li>
+                <li role="separator"  class="divider"></li>
+            <% end %>
           </ul>
         </li>
       </ul>

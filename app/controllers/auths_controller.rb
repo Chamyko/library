@@ -1,6 +1,6 @@
 class AuthsController < ApplicationController
   def login
-     if log_in?
+     if logged_in?
        redirect_to root_path
      else
        render 'login'

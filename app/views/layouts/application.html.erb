@@ -51,8 +51,8 @@
             <span class="caret"></span></a>
           <ul class="dropdown-menu">
             <% if !logged_in? %>
+                <li><a href="<%= login_auths_path %>">Sign In</a></li>
                 <li><a href="<%= new_users_path %>">Sign Up</a></li>
-                <li><a href="<%= login_auths_path %>">Sign Up</a></li>
             <% else %>
                 <%= link_to "Log out", logout_auths_path, method: :post %>
             <% end %>

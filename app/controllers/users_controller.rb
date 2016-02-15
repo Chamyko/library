@@ -1,18 +1,15 @@
 class UsersController < ApplicationController
 
-  def login
-
-  end
   def new
     @user=User.new
   end
-  def signup
+  def register
     @user=User.new(user_params)
       respond_to do |format|
         if(@user.save)
           format.html {redirect_to 'welcome/index', notice: 'You may sign in now.'}
         else
-          format.html {'new'}
+          format.html {render 'new'}
         end
       end
   end
